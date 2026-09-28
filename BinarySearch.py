@@ -3,17 +3,16 @@ x = input('Input a number: ')
 left = 0
 right = len(a) - 1
 
-# Find x in the list a
 while left <= right:
     middle = (left + right) // 2
-  
-    if a[middle] == int(x):  # Success
-        print('There is {:3} at a[{:2}] in the list.'.format(x, middle))
-        break   
+
+    if a[middle] == int(x):
+        print('Found {:5} at position {:3}.'.format(x, middle))
+        break
     elif a[middle] < int(x):
-        left = middle + 1    
+        left = middle + 1
     else:
         right = middle - 1
 
-if left > right: # Fail
-    print('There is not {:3} in this list.'.format(x))
+else:
+    print('{:3} was not found in the list.'.format(x))
